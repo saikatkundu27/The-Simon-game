@@ -90,3 +90,10 @@ $("body").keydown(function() {
   }
 
 });
+$("body").touchend(function() {
+    if (start === false) {
+      start = true;
+      nextSequence();
+    }
+  
+  });
