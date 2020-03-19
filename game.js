@@ -90,10 +90,11 @@ $("body").keydown(function() {
   }
 
 });
-$("body").touchend(function() {
+document.querySelector("body").addEventListener(Touch,function() {
     if (start === false) {
       start = true;
       nextSequence();
     }
   
   });
+  
