@@ -11,6 +11,10 @@ function startOver()
      userClickedPattern = [];
      level = 0;
      start = false;
+     setTimeout(function(){ $("#start-btn").css("visibility","visible");
+
+     },1000);
+    
     
     
 }
@@ -56,7 +60,7 @@ userClickedPattern=[];
   playSound(randomChosenColour);
 }
 
-$(".btn").click(function(event) {
+$(".btns").click(function(event) {
 
   var userChosenColour = event.target.id; //or this.id
   userClickedPattern.push(userChosenColour);
@@ -73,7 +77,7 @@ $(".btn").click(function(event) {
     else{
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").html("Game Over, Press Any Key to Restart");
+        $("#level-title").html("Game Over, Press Start button");
         setTimeout(function(){ $("body").removeClass("game-over")},200);
       startOver();                
     }
@@ -83,18 +87,11 @@ $(".btn").click(function(event) {
 
 //firstpress
 
-$("body").keydown(function() {
+$("#start-btn").click(function() {
   if (start === false) {
     start = true;
     nextSequence();
+    $("#start-btn").css("visibility","hidden");
   }
 
 });
-document.querySelector("body").addEventListener(touchend,function() {
-    if (start === false) {
-      start = true;
-      nextSequence();
-    }
-  
-  });
-  
