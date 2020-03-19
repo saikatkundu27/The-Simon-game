@@ -90,7 +90,7 @@ $("body").keydown(function() {
   }
 
 });
-document.querySelector("body").addEventListener(Touch,function() {
+document.querySelector("body").addEventListener(touchend,function() {
     if (start === false) {
       start = true;
       nextSequence();
